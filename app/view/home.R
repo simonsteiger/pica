@@ -3,6 +3,7 @@ box::use(
     bslib[page_fixed, card, card_header, card_body],
     purrr[map],
     shiny.router[change_page],
+    shinyjs[disable],
 )
 
 box::use(
@@ -27,8 +28,8 @@ ui <- function(id) {
                         ),
                         div(
                             class = "d-flex flex-row justify-content-center gap-3",
-                            actionButton("goup", "Uploading data!"),
-                            actionButton("godash", "Visualizations!")
+                            actionButton(ns("upload"), "Uploading data!"),
+                            actionButton(ns("godash"), "Visualizations!")
                         ),
                     ),
                     NULL
@@ -39,14 +40,16 @@ ui <- function(id) {
 }
 
 #' @export
-server <- function(id) {
+server <- function(id, pages) {
     moduleServer(id, function(input, output, session) {
-        wrap_change_page <- function(id) {
-            observeEvent(input[[id]], {
-                change_page(id)
+        wrap_change_page <- function(page) {
+            observeEvent(input[[page]], {
+                change_page(page)
             })
         }
 
-        map(c("goup", "godash"), \(id) wrap_change_page(id))
+        disable("godash")
+
+        map(pages, \(page) wrap_change_page(page))
     })
 }

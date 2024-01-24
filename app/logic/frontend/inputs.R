@@ -1,5 +1,6 @@
 box::use(
-    shiny[actionButton, icon]
+    shiny[actionButton, icon],
+    shiny.router[change_page]
 )
 
 #' @export

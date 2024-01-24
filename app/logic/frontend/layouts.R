@@ -12,7 +12,7 @@ row2 <- function(content = list(), class = NULL, colwidths = list()) {
 
     out <- map(seq_along(content), \(i) {
         div(
-            class = paste0("col-", colwidths[[i]]),
+            class = paste0("col-lg-", colwidths[[i]], " col-sm-12"),
             content[[i]]
         )
     })

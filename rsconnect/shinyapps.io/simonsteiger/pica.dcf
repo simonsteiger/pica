@@ -1,0 +1,10 @@
+name: pica
+title:
+username: simonsteiger
+account: simonsteiger
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11022297
+bundleId: 8180826
+url: https://simonsteiger.shinyapps.io/pica/
+version: 1
