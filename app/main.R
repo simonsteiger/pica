@@ -5,6 +5,8 @@ box::use(
   googlesheets4[gs4_auth],
   googledrive[drive_token, drive_auth],
   shinyjs[useShinyjs],
+  dotenv[load_dot_env],
+  here[here],
 )
 
 box::use(
@@ -13,9 +15,11 @@ box::use(
   app / logic / frontend[theme_light],
 )
 
+load_dot_env(file = here(".env"))
+
 # Authenticate Google sheets
-drive_auth(cache = ".secrets", email = "simon.j.steiger@gmail.com")
-gs4_auth(token = drive_token(), email = "simon.j.steiger@gmail.com")
+drive_auth(cache = ".secrets", email = Sys.getenv("EMAIL"))
+gs4_auth(token = drive_token(), email = Sys.getenv("EMAIL"))
 
 #' @export
 ui <- function(id) {

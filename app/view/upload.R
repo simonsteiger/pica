@@ -23,14 +23,14 @@ ui <- function(id) {
                     NULL,
                     div(
                         div(
-                            class = "d-flex flex-column justify-content-center text-center mt-5",
+                            class = "d-flex flex-column justify-content-center align-items-center text-center mt-5",
                             tags$h1("Tables? Thrilling..."),
                             tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(
                             class = "d-flex flex-column align-items-center gap-3",
                             textInput(ns("name"), "Name it!"),
-                            fileInput(ns("file"), "Gimme it!", accept = ".csv", placeholder = "'tis no shiny"),
+                            fileInput(ns("file"), "Gimme it!", accept = ".csv", placeholder = "No file"),
                         ),
                         div(
                             class = "d-flex justify-content-center m-5",
@@ -61,7 +61,8 @@ server <- function(id) {
                 validate("No likey. I collect only .csv shinies.")
             )
 
-            gs4_create(input$name %||% "unnamed_sheet", sheets = list(sheet1 = data))
+            # Uncomment this line to enable uploading to the authorized google drive account
+            # gs4_create(input$name %||% "unnamed_sheet", sheets = list(sheet1 = data))
         })
     })
 }

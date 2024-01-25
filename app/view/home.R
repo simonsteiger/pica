@@ -1,5 +1,5 @@
 box::use(
-    shiny[div, moduleServer, NS, renderUI, tags, tagList, uiOutput, actionButton, observeEvent],
+    shiny[div, moduleServer, NS, renderUI, tags, icon, tagList, uiOutput, actionButton, observeEvent],
     bslib[page_fixed, card, card_header, card_body],
     purrr[map],
     shiny.router[change_page],
@@ -31,6 +31,19 @@ ui <- function(id) {
                             actionButton(ns("upload"), "Uploading data!"),
                             actionButton(ns("godash"), "Visualizations!")
                         ),
+                        div(
+                            class = "d-flex flex-row justify-content-center mt-3",
+                            tags$a(
+                                href = "https://www.github.com/simonsteiger/pica",
+                                target = "_blank",
+                                class = "btn btn-default action-button shiny-bound-input",
+                                div(
+                                    class = "d-flex flex-row align-items-center gap-2 small",
+                                    icon(class = "fs-4", "github"),
+                                    "Code!"
+                                )
+                            )
+                        )
                     ),
                     NULL
                 )
