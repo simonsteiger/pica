@@ -1,11 +1,13 @@
-This shiny app demonstrates how to store tabular data persistently on cloud services, such as Google Drive^[It is also possible to use services like Dropbox or MySQL, see [this article](https://shiny.posit.co/r/articles/build/persistent-data-storage/) for more information.].
+# Persistent storage demo app
 
-# Installation
+This shiny app demonstrates how to store tabular data persistently on cloud services, such as Google Drive (it is also possible to use services like Dropbox or MySQL, see [this article](https://shiny.posit.co/r/articles/build/persistent-data-storage/) for more information).
+
+## Installation
 
 Feel free to base your own work off of this repository by forking it and then cloning it onto your machine. 
 If you have not done this before, see [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
-# Authorizing a Google account
+## Authorizing a Google account
 
 Upload data from your shiny app to Google Drive requires your account to be authorized.
 Since Google requires the user to authenticate in each session, we need to find a way to automatically authenticate the user of the shiny app.
@@ -31,7 +33,7 @@ As you can see in the code from `main.R`, I am also using a `.env` file to store
 In short, they store information that you think would better not be shared publicly, such as passwords, API keys, etc.
 This file, alongside the `.secrets` folder containing your authentication key, should be added to the `.gitignore` file.
 
-# Misc
+## Misc
 
 While I am very curious about the kinds of CSV files you would like to share with me, the live app **does not upload** to the authorized Google Drive account.
 To change this in your project, uncomment line 65 in `app/view/upload.R`.
