@@ -7,9 +7,6 @@ box::use(
 # Frontend reexports
 
 #' @export
-head <- layouts$head
-
-#' @export
 row2 <- layouts$row2
 
 #' @export

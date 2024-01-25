@@ -1,13 +1,12 @@
 box::use(
     shiny[div, moduleServer, NS, renderUI, tags, icon, tagList, uiOutput, actionButton, observeEvent],
-    bslib[page_fixed, card, card_header, card_body],
     purrr[map],
     shiny.router[change_page],
     shinyjs[disable],
 )
 
 box::use(
-    app / logic / frontend[row2, head],
+    app / logic / frontend[row2],
 )
 
 #' @export
@@ -23,7 +22,7 @@ ui <- function(id) {
                     div(
                         div(
                             class = "d-flex flex-column justify-content-center align-items-center text-center mt-5",
-                            tags$h1("What are you up to?"),
+                            tags$h1("What are you up to?", style = "margin-bottom: 2rem;"),
                             tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(

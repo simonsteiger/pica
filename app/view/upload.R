@@ -7,7 +7,7 @@ box::use(
 )
 
 box::use(
-    app / logic / frontend[row2, head, btn_return],
+    app / logic / frontend[row2, btn_return],
     app / logic / backend[obs_return],
 )
 
@@ -24,7 +24,7 @@ ui <- function(id) {
                     div(
                         div(
                             class = "d-flex flex-column justify-content-center align-items-center text-center mt-5",
-                            tags$h1("Tables? Thrilling..."),
+                            tags$h1("Tables? Thrilling...", style = "margin-bottom: 2rem;"),
                             tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(
