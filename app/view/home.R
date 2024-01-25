@@ -36,7 +36,7 @@ ui <- function(id) {
                             tags$a(
                                 href = "https://www.github.com/simonsteiger/pica",
                                 target = "_blank",
-                                class = "btn btn-default action-button shiny-bound-input",
+                                class = "btn btn-default",
                                 div(
                                     class = "d-flex flex-row align-items-center gap-2 small",
                                     icon(class = "fs-4", "github"),

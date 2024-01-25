@@ -5,6 +5,6 @@ account: simonsteiger
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11022297
-bundleId: 8182436
+bundleId: 8182506
 url: https://simonsteiger.shinyapps.io/pica/
 version: 1
