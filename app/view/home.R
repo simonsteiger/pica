@@ -22,9 +22,9 @@ ui <- function(id) {
                     NULL,
                     div(
                         div(
-                            class = "d-flex flex-column justify-content-center text-center mt-5",
+                            class = "d-flex flex-column justify-content-center align-items-center text-center mt-5",
                             tags$h1("What are you up to?"),
-                            tags$img(src = "static/logo.png", width = "200px")
+                            tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(
                             class = "d-flex flex-row justify-content-center gap-3",

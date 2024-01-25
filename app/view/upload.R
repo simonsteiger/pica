@@ -25,7 +25,7 @@ ui <- function(id) {
                         div(
                             class = "d-flex flex-column justify-content-center text-center mt-5",
                             tags$h1("Tables? Thrilling..."),
-                            tags$img(src = "static/logo.png", width = "200px")
+                            tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(
                             class = "d-flex flex-column align-items-center gap-3",
