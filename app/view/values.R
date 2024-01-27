@@ -1,7 +1,6 @@
 box::use(
     sh = shiny,
     tbl = tibble,
-    dp = dplyr,
     pr = purrr,
 )
 
@@ -34,9 +33,6 @@ ui <- function(id) {
                         sh$div(
                             class = "d-flex justify-content-center m-5",
                             btn_return(ns("return"))
-                        ),
-                        sh$div(
-                            sh$tableOutput(ns("table"))
                         )
                     ),
                     NULL
