@@ -12,6 +12,7 @@ box::use(
 box::use(
   app / view / home,
   app / view / upload,
+  app / view / visual,
   app / logic / frontend[theme_light],
 )
 
@@ -35,6 +36,10 @@ ui <- function(id) {
       route(
         "upload",
         upload$ui(ns("upload"))
+      ),
+      route(
+        "visual",
+        visual$ui(ns("visual"))
       )
     )
   )
@@ -44,7 +49,8 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     router_server("/")
-    home$server("home", page = c("upload"))
+    home$server("home", page = c("upload", "visual"))
     upload$server("upload")
+    visual$server("visual")
   })
 }

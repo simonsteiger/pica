@@ -28,7 +28,7 @@ ui <- function(id) {
                         div(
                             class = "d-flex flex-row justify-content-center gap-3",
                             actionButton(ns("upload"), "Uploading data!"),
-                            actionButton(ns("godash"), "Visualizations!")
+                            actionButton(ns("visual"), "Visualizations!")
                         ),
                         div(
                             class = "d-flex flex-row justify-content-center mt-3",
@@ -59,8 +59,6 @@ server <- function(id, pages) {
                 change_page(page)
             })
         }
-
-        disable("godash")
 
         map(pages, \(page) wrap_change_page(page))
     })
