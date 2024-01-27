@@ -7,12 +7,13 @@ box::use(
   shinyjs[useShinyjs],
   dotenv[load_dot_env],
   here[here],
+  shinyFeedback[useShinyFeedback],
 )
 
 box::use(
   app / view / home,
-  app / view / upload,
-  app / view / visual,
+  app / view / tables,
+  app / view / values,
   app / logic / frontend[theme_light],
 )
 
@@ -27,6 +28,7 @@ ui <- function(id) {
   ns <- NS(id)
   page(
     useShinyjs(),
+    useShinyFeedback(),
     theme = theme_light,
     router_ui(
       route(
@@ -34,12 +36,12 @@ ui <- function(id) {
         home$ui(ns("home"))
       ),
       route(
-        "upload",
-        upload$ui(ns("upload"))
+        "tables",
+        tables$ui(ns("tables"))
       ),
       route(
-        "visual",
-        visual$ui(ns("visual"))
+        "values",
+        values$ui(ns("values"))
       )
     )
   )
@@ -49,8 +51,8 @@ ui <- function(id) {
 server <- function(id) {
   moduleServer(id, function(input, output, session) {
     router_server("/")
-    home$server("home", page = c("upload", "visual"))
-    upload$server("upload")
-    visual$server("visual")
+    home$server("home", page = c("tables", "values"))
+    tables$server("tables")
+    values$server("values")
   })
 }

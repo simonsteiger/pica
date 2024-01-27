@@ -1,14 +1,19 @@
+$success: #3DA46D;
+
 body, html {
     height: 100%;
     margin: 0;
 }
+  
+@mixin btn-active($bg-color: #3DA46D, $bd-color: #3DA46D) {
+    &:hover {
+        background-color: lighten($bg-color, 10%) !important;
+        transition: all ease-in-out 300ms !important;
+      }
+}
 
-.flex-center-100 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.btn-confirm {
+    @include btn-active;
 }
 
 $btn-border-radius: 0px !important;

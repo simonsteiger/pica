@@ -5,6 +5,8 @@ box::use(
 #' @export
 light <- bs_theme(
   version = 5,
+  success = "#6fad8c",
+  primary = "black",
   base_font = font_collection(
     font_google("Roboto Mono", local = FALSE), "Roboto", "serif"
   ),

@@ -25,7 +25,7 @@ ui <- function(id) {
                         div(
                             class = "d-flex flex-column justify-content-center align-items-center text-center mt-5",
                             tags$h1("Tables? Thrilling...", style = "margin-bottom: 2rem;"),
-                            tags$img(style = "margin-right: 25rem;", src = "static/logo.png", width = "200px")
+                            tags$img(style = "margin-right: 22rem;", src = "static/logo.png", width = "200px")
                         ),
                         div(
                             class = "d-flex flex-column align-items-center gap-3",
@@ -58,7 +58,7 @@ server <- function(id) {
             data <- switch(ext,
                 csv = vroom(input$file$datapath, delim = ","),
                 # can add more extensions here
-                validate("No likey. I collect only .csv shinies.")
+                validate("Must choose a CSV.")
             )
 
             # Uncomment this line to enable uploading to the authorized google drive account

@@ -1074,6 +1074,20 @@
       ],
       "Hash": "704f0167ce6857051a48547e31d38060"
     },
+    "shinyFeedback": {
+      "Package": "shinyFeedback",
+      "Version": "0.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "fontawesome",
+        "htmltools",
+        "jsonlite",
+        "shiny"
+      ],
+      "Hash": "88a6b7ff3d135195ad0011fec04336f2"
+    },
     "shinyjs": {
       "Package": "shinyjs",
       "Version": "2.1.0",
